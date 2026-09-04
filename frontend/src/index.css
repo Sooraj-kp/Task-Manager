@@ -1,0 +1,282 @@
+:root {
+    --primary: #4F46E5;
+    --primary-hover: #4338CA;
+    --bg-color: #F3F4F6;
+    --surface: #FFFFFF;
+    --text-main: #111827;
+    --text-muted: #6B7280;
+    --border: #D1D5DB;
+    --border-focus: #4F46E5;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --border-radius: 8px;
+}
+
+body.dark {
+    --bg-color: #111827;
+    --surface: #1F2937;
+    --text-main: #F9FAFB;
+    --text-muted: #9CA3AF;
+    --border: #374151;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Dark mode specific overrides */
+
+body.dark select,
+body.dark input,
+body.dark textarea {
+    background-color: var(--surface);
+    color: var(--text-main);
+}
+
+body.dark .btn-secondary {
+    background-color: #374151;
+    color: #F9FAFB;
+    border-color: #4B5563;
+}
+
+body.dark .btn-secondary:hover {
+    background-color: #4B5563;
+}
+
+body.dark .dashboard-header button:hover {
+    background-color: #374151;
+    color: var(--text-main);
+}
+
+body.dark .message-alert {
+    background-color: #312E81;
+    color: #E0E7FF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+#root {
+    width: 100%;
+    max-width: 800px;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary);
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Form Styles */
+
+form {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 400px;
+    margin: 0 auto 1.5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+form.dashboard-form {
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+form>div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+    width: 100%;
+    font-family: inherit;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    width: auto;
+    font-size: 0.875rem;
+}
+
+.btn-secondary {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+.btn-secondary:hover {
+    background-color: #e5e7eb;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+
+/* Task Cards */
+
+.task-card {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.task-card h3 {
+    margin-bottom: 0.25rem;
+    color: var(--text-main);
+}
+
+.task-card p {
+    color: var(--text-muted);
+}
+
+.task-card .task-status {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 0;
+}
+
+.dashboard-header button {
+    width: auto;
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+}
+
+.dashboard-header button:hover {
+    background-color: #f9fafb;
+    color: var(--text-main);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.message-alert {
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    background-color: #e0e7ff;
+    color: #3730a3;
+    max-width: 400px;
+    margin: 0 auto 1.5rem auto;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+}
